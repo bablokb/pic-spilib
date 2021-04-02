@@ -21,7 +21,9 @@ void spi_init(uint8_t status, uint8_t control, uint8_t add) {
   // pins are digital
   bitclear(ANSEL_SPI_SDO,PIN_SPI_SDO);
   bitclear(ANSEL_SPI_CLK,PIN_SPI_CLK);
+#ifndef SPI_NO_SDI
   bitclear(ANSEL_SPI_SDI,PIN_SPI_SDI);
+#endif
 #ifdef SPI_HOST 
   bitclear(ANSEL_SPI_CS,PIN_SPI_CS);
 #else
@@ -30,7 +32,9 @@ void spi_init(uint8_t status, uint8_t control, uint8_t add) {
 
   // pin directions
   bitclear(TRIS_SPI_SDO,PIN_SPI_SDO);     // SDO is output
+#ifndef SPI_NO_SDI
   bitset(TRIS_SPI_SDI,PIN_SPI_SDI);       // SDI is input
+#endif
 #ifdef SPI_HOST
   bitclear(TRIS_SPI_CLK,PIN_SPI_CLK);     // CLK is output
   bitclear(TRIS_SPI_CS,PIN_SPI_CS);       // CS is output
