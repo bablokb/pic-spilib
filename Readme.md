@@ -18,6 +18,7 @@ Currently, the following PICs are supported:
 
   - PIC12F1840
   - PIC16F690
+  - PIC16F1829
 
 If you add a new mcu, please provide a pull-request.
 
