@@ -13,6 +13,12 @@
 
 #include "picconfig.h"
 
+#ifdef __SDCC
+  #undef C
+  #undef BF
+  #undef SSPEN
+#endif
+
 // pin definitions
 #ifndef SPI_2
   // SSP1
