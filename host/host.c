@@ -65,11 +65,6 @@ static void init(void) {
   bitclear(TRIS_SR_OUT,PIN_SR_OUT);
   GP_SR_OUT = 0;
 
-  // PIN_SPI_CS is digital output
-  bitclear(ANSEL_SPI_CS,PIN_SPI_CS);
-  bitclear(TRIS_SPI_CS,PIN_SPI_CS);
-  GP_SPI_CS = 1;
-
   INIT_SPECIAL;
   CLOCK_4MHZ;
 }
